@@ -1,0 +1,1561 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<base target="_top">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viriathus - Corporate Email Automation 2026 Enterprise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* --- VIRIATHUS THEME & OPTIMIZED CSS V4.4.0 ENTERPRISE (PERFORMANCE & UX EDITION) --- */
+:root {
+--bg-dark: #0a0c10;
+--bg-panel: rgba(15, 18, 26, 0.65);
+--bg-glass-heavy: rgba(20, 24, 33, 0.85);
+--bg-glass-light: rgba(255, 255, 255, 0.03);
+--border-color: rgba(212, 175, 55, 0.3);
+--border-glow: rgba(212, 175, 55, 0.6);
+--primary-accent: #d4af37;
+--primary-glow: #f1cf65;
+--text-primary: #e8e8ed;
+--text-secondary: #9aa0a6;
+--success-color: #66bb6a;
+--error-color: #ef5350;
+--font-main: 'Lora', serif;
+--font-mono: 'Roboto Mono', monospace;
+--font-header: 'Cinzel', serif;
+--accent-blue-dark: #1e2638;
+--accent-blue-light: #3a4660;
+--token-bg: rgba(212, 175, 55, 0.1);
+--shadow-volumetric: 0 10px 30px -10px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+/* Density Variables Preparatory */
+--ui-padding: 16px;
+--input-height: 48px;
+}
+
+/* === GLOBAL RESET FOR THE HOST ENVIRONMENT === */
+body {
+background-color: var(--bg-dark);
+margin: 0;
+padding: 0;
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: flex-start;
+overflow-x: hidden;
+}
+
+/* V4.4.0: ACCESSIBILITY FOCUS VISIBLE (Keyboard Navigation) */
+*:focus-visible {
+outline: 2px solid var(--primary-glow) !important;
+outline-offset: 2px !important;
+border-radius: 4px;
+}
+
+/* V4.4.0: HARDWARE ACCELERATED MESH BACKGROUND */
+.css-mesh-background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+z-index: 0;
+background-color: var(--bg-dark);
+overflow: hidden;
+pointer-events: none;
+}
+.css-mesh-background::before,
+.css-mesh-background::after {
+content: '';
+position: absolute;
+width: 150vw;
+height: 150vh;
+top: -25vh;
+left: -25vw;
+background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.03) 0%, transparent 60%),
+radial-gradient(circle at 80% 20%, rgba(58, 70, 96, 0.04) 0%, transparent 50%);
+animation: mesh-drift 30s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+transform-origin: center;
+}
+.css-mesh-background::after {
+background: radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.02) 0%, transparent 60%);
+animation: mesh-drift-reverse 40s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes mesh-drift {
+0% { transform: scale(1) rotate(0deg) translate(0, 0); }
+100% { transform: scale(1.1) rotate(3deg) translate(2%, 2%); }
+}
+@keyframes mesh-drift-reverse {
+0% { transform: scale(1) rotate(0deg) translate(0, 0); }
+100% { transform: scale(1.15) rotate(-3deg) translate(-2%, -2%); }
+}
+
+.vignette-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background: radial-gradient(circle at 50% 0%, rgba(20, 24, 33, 0) 20%, var(--bg-dark) 100%); z-index: 1; }
+
+/* === SCOPED ARCHITECTURE === */
+.viriathus-core-app {
+font-family: var(--font-main);
+color: var(--text-primary);
+font-size: 15px;
+-webkit-font-smoothing: antialiased;
+position: relative;
+z-index: 2;
+width: 100%;
+padding: 40px 20px;
+box-sizing: border-box;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.viriathus-core-app * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* === UTILITY CLASSES === */
+.viriathus-core-app .hidden { display: none !important; }
+.viriathus-core-app .flex-grow { flex-grow: 1; }
+.viriathus-core-app .flex-row-gap { display: flex; gap: 10px; align-items: center; }
+.viriathus-core-app .flex-center-gap { display: flex; align-items: center; gap: 10px; }
+.viriathus-core-app .flex-stretch-gap { display: flex; gap: 16px; align-items: stretch; }
+.viriathus-core-app .flex-start-gap { display: flex; gap: 16px; align-items: flex-start; }
+.viriathus-core-app .no-margin-bottom { margin-bottom: 0 !important; }
+.viriathus-core-app .margin-bottom-sm { margin-bottom: 12px !important; }
+.viriathus-core-app .margin-bottom-lg { margin-bottom: 20px !important; }
+.viriathus-core-app .margin-bottom-xl { margin-bottom: 24px !important; }
+.viriathus-core-app .margin-top-lg { margin-top: 24px !important; }
+.viriathus-core-app .align-start { align-items: flex-start !important; }
+.viriathus-core-app .width-restricted { max-width: 280px; }
+.viriathus-core-app .icon-inline { vertical-align: middle; margin-right: 6px; width: 16px; height: 16px; }
+.viriathus-core-app .icon-std { width: 18px; height: 18px; }
+.viriathus-core-app .accent-color { color: var(--primary-accent); }
+
+/* V4.4.0: SKELETON LOADER CLASSES */
+@keyframes skeleton-shimmer {
+0% { background-position: -200% 0; }
+100% { background-position: 200% 0; }
+}
+.viriathus-core-app .skeleton-box {
+display: inline-block;
+height: 1em;
+position: relative;
+overflow: hidden;
+background-color: rgba(255,255,255,0.05);
+border-radius: 4px;
+background-image: linear-gradient(90deg, rgba(255,255,255,0) 0, rgba(255,255,255,0.05) 20%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0) 100%);
+background-size: 200% 100%;
+background-repeat: no-repeat;
+animation: skeleton-shimmer 1.5s infinite linear;
+width: 100%;
+}
+.viriathus-core-app .skeleton-box.height-lg { height: 38px; border-radius: 8px; }
+.viriathus-core-app .w-50 { width: 50% !important; }
+.viriathus-core-app .w-60 { width: 60% !important; }
+.viriathus-core-app .w-70 { width: 70% !important; }
+.viriathus-core-app .w-80 { width: 80% !important; }
+.viriathus-core-app .w-90 { width: 90% !important; }
+.viriathus-core-app .w-100 { width: 100% !important; }
+
+/* === TYPOGRAPHY & BRANDING === */
+.viriathus-core-app .brand-header-wrapper { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; animation: fadeInDown 0.8s ease; }
+.viriathus-core-app .logo-container { height: 90px; width: 90px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border: 1px solid var(--border-glow); box-shadow: 0 0 20px rgba(212, 175, 55, 0.15), inset 0 0 15px rgba(212, 175, 55, 0.1); background: var(--bg-glass-heavy); backdrop-filter: blur(8px); }
+.viriathus-core-app .logo-container img { width: 85%; height: 85%; border-radius: 50%; object-fit: cover; filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4)); }
+.viriathus-core-app .logo-text { color: var(--primary-accent); font-family: var(--font-header); font-size: 22px; letter-spacing: 8px; text-transform: uppercase; text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3); }
+
+@keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* === LAYOUT & CARDS (GLASSMORPHISM) === */
+.viriathus-core-app .main-content { width: 100%; max-width: 950px; display: flex; flex-direction: column; gap: 20px; animation: fadeInUp 0.8s ease; }
+.viriathus-core-app .content-card {
+background: var(--bg-panel);
+border: 1px solid var(--border-color);
+padding: 32px;
+box-shadow: var(--shadow-volumetric);
+border-radius: 20px;
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.viriathus-core-app .collapsible-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: var(--ui-padding); margin-bottom: 24px; cursor: default; }
+.viriathus-core-app .collapsible-header h2 { font-family: var(--font-header); font-size: 1.25rem; font-weight: 700; color: var(--primary-accent); display: flex; align-items: center; gap: 12px; text-shadow: 0 0 15px rgba(212, 175, 55, 0.2); letter-spacing: 1px; }
+.viriathus-core-app .collapsible-header h2 svg { width: 22px; height: 22px; }
+
+.viriathus-core-app .action-row { display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.viriathus-core-app .glass-row { background: var(--bg-glass-light); padding: 20px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); box-shadow: inset 0 0 20px rgba(0,0,0,0.2); }
+.viriathus-core-app .glass-row-footer { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.05); margin-bottom: 0; }
+.viriathus-core-app .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+.viriathus-core-app .form-group { display: flex; flex-direction: column; gap: 8px; flex-grow: 1; }
+.viriathus-core-app label { font-weight: 700; font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1.5px; }
+
+/* === INPUTS & CONTROLS === */
+.viriathus-core-app select,
+.viriathus-core-app input[type="text"],
+.viriathus-core-app input[type="date"],
+.viriathus-core-app textarea {
+background-color: rgba(0,0,0,0.4);
+border: 1px solid rgba(255,255,255,0.1);
+color: var(--text-primary);
+border-radius: 12px;
+padding: 0 16px;
+font-size: 14px;
+width: 100%;
+font-family: var(--font-main);
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+}
+.viriathus-core-app select,
+.viriathus-core-app input[type="text"],
+.viriathus-core-app input[type="date"] { height: var(--input-height); }
+.viriathus-core-app textarea { padding: 12px 16px; resize: vertical; min-height: var(--input-height); }
+.viriathus-core-app .textarea-single-line { height: var(--input-height); min-height: var(--input-height); margin: 0; flex-grow: 1; }
+
+.viriathus-core-app select option { background-color: var(--bg-dark); color: var(--text-primary); padding: 8px; }
+.viriathus-core-app select optgroup { background-color: var(--bg-dark); color: var(--primary-accent); font-weight: bold; }
+.viriathus-core-app input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(80%) sepia(10%) saturate(500%) hue-rotate(350deg); cursor: pointer; opacity: 0.7; transition: 0.2s; }
+.viriathus-core-app input[type="date"]::-webkit-calendar-picker-indicator:hover { opacity: 1; }
+
+.viriathus-core-app select:focus,
+.viriathus-core-app input:focus,
+.viriathus-core-app textarea:focus {
+outline: none;
+border-color: var(--primary-accent);
+box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15), inset 0 2px 4px rgba(0,0,0,0.3);
+background-color: rgba(0,0,0,0.6);
+}
+.viriathus-core-app select:disabled, .viriathus-core-app input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* === BUTTONS === */
+.viriathus-core-app .btn {
+border: 1px solid rgba(255,255,255,0.1);
+background: rgba(255,255,255,0.03);
+color: var(--text-primary);
+font-weight: 700;
+padding: 0 24px;
+border-radius: 999px;
+cursor: pointer;
+font-size: 13px;
+transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+text-transform: uppercase;
+letter-spacing: 1px;
+height: var(--input-height);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+backdrop-filter: blur(4px);
+}
+.viriathus-core-app .btn:hover:not(:disabled) {
+color: var(--primary-accent);
+border-color: var(--border-glow);
+background: rgba(212, 175, 55, 0.05);
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.viriathus-core-app .btn:disabled { cursor: not-allowed; opacity: 0.4; transform: none; box-shadow: none; }
+.viriathus-core-app .btn.primary {
+background: linear-gradient(135deg, var(--accent-blue-dark), var(--accent-blue-light));
+border: 1px solid rgba(255,255,255,0.1);
+color: white;
+box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+.viriathus-core-app .btn.primary:hover:not(:disabled) {
+box-shadow: 0 8px 25px rgba(64, 75, 105, 0.6);
+border-color: var(--primary-accent);
+}
+.viriathus-core-app .btn.danger { border-color: rgba(239, 83, 80, 0.3); color: var(--error-color); }
+.viriathus-core-app .btn.danger:hover:not(:disabled) {
+background-color: rgba(239, 83, 80, 0.1);
+border-color: var(--error-color);
+box-shadow: 0 0 15px rgba(239, 83, 80, 0.2);
+}
+.viriathus-core-app .btn-small { height: 36px; padding: 0 16px; font-size: 11px; }
+
+/* === MULTISELECT COMPONENT === */
+.viriathus-core-app .custom-multiselect { position: relative; width: 100%; font-family: var(--font-main); font-size: 14px; user-select: none; }
+.viriathus-core-app .custom-multiselect-header { background-color: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: var(--text-primary); border-radius: 12px; padding: 0 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s ease; height: var(--input-height); box-shadow: inset 0 2px 4px rgba(0,0,0,0.3); }
+.viriathus-core-app .custom-multiselect-header:hover { border-color: var(--primary-accent); }
+.viriathus-core-app .custom-multiselect-header.active { border-color: var(--primary-accent); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.viriathus-core-app .custom-multiselect-options { position: absolute; top: 100%; left: 0; right: 0; background-color: var(--bg-glass-heavy); backdrop-filter: blur(12px); border: 1px solid var(--primary-accent); border-top: none; border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; max-height: 300px; overflow-y: auto; z-index: 1000; display: none; box-shadow: 0 15px 35px rgba(0,0,0,0.9); }
+.viriathus-core-app .custom-multiselect.open .custom-multiselect-options { display: block; animation: slideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; transform-origin: top center; }
+@keyframes slideDown { from { opacity: 0; transform: scaleY(0.9); } to { opacity: 1; transform: scaleY(1); } }
+.viriathus-core-app .custom-multiselect-options::-webkit-scrollbar { width: 6px; }
+.viriathus-core-app .custom-multiselect-options::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 0 0 12px 0;}
+.viriathus-core-app .custom-multiselect-options::-webkit-scrollbar-thumb { background: rgba(212, 175, 55, 0.3); border-radius: 12px;}
+.viriathus-core-app .custom-multiselect-options::-webkit-scrollbar-thumb:hover { background: var(--primary-accent); }
+.viriathus-core-app .custom-multiselect-actions { display: flex; justify-content: space-between; padding: 12px 16px; background: rgba(0,0,0,0.6); border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 2; backdrop-filter: blur(8px); }
+.viriathus-core-app .custom-multiselect-actions button { background: none; border: none; color: var(--primary-accent); cursor: pointer; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; font-family: var(--font-main); transition: 0.2s; }
+.viriathus-core-app .custom-multiselect-actions button:hover { text-shadow: 0 0 10px rgba(212, 175, 55, 0.8); }
+.viriathus-core-app .custom-multiselect-search { width: 100%; padding: 0 16px; height: 44px; background: rgba(10, 12, 16, 0.95); border: none; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-primary); font-family: var(--font-main); font-size: 13px; outline: none; position: sticky; top: 41px; z-index: 2; border-radius: 0; box-shadow: none; }
+.viriathus-core-app .custom-multiselect-search:focus { background: #000; box-shadow: none; }
+.viriathus-core-app .custom-option { padding: 12px 16px; display: flex; align-items: center; gap: 12px; cursor: pointer; transition: background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.02); }
+.viriathus-core-app .custom-option:hover { background-color: rgba(212, 175, 55, 0.08); }
+.viriathus-core-app .custom-option input[type="checkbox"] { cursor: pointer; width: 16px; height: 16px; accent-color: var(--primary-accent); }
+
+/* === EDITOR & TOKENS === */
+.viriathus-core-app .token-panel { background: var(--bg-glass-light); padding: 16px; border-radius: 12px; margin-bottom: 24px; border: 1px dashed rgba(255,255,255,0.1); }
+.viriathus-core-app .token-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+.viriathus-core-app .token-pill { background: var(--token-bg); border: 1px solid var(--border-glow); color: var(--primary-accent); padding: 8px 16px; border-radius: 20px; cursor: pointer; font-size: 12px; font-weight: bold; font-family: var(--font-main); transition: all 0.2s; box-shadow: inset 0 0 5px rgba(0,0,0,0.5); backdrop-filter: blur(4px); }
+.viriathus-core-app .token-pill:hover { background: var(--primary-accent); color: #000; box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); transform: translateY(-2px); }
+.viriathus-core-app .visual-token { background: var(--token-bg); color: var(--primary-glow); border: 1px solid var(--border-glow); border-radius: 6px; padding: 2px 8px; font-weight: bold; font-size: 13px; display: inline-block; margin: 0 2px; }
+
+.viriathus-core-app .editor-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: stretch; }
+.viriathus-core-app .editor-container { border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; overflow: hidden; background: rgba(0,0,0,0.4); display: flex; flex-direction: column; height: 100%; min-height: 280px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.5); }
+.viriathus-core-app .editor-toolbar { background: rgba(255,255,255,0.02); border-bottom: 1px solid rgba(255,255,255,0.05); padding: 8px 12px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.viriathus-core-app .editor-toolbar button { background: transparent; border: 1px solid transparent; color: var(--text-primary); border-radius: 6px; padding: 6px 10px; cursor: pointer; font-size: 14px; transition: 0.2s; font-family: var(--font-main); }
+.viriathus-core-app .editor-toolbar button:hover { background: rgba(212, 175, 55, 0.1); color: var(--primary-accent); }
+.viriathus-core-app .editor-toolbar .separator { width: 1px; height: 18px; background: rgba(255,255,255,0.1); margin: 0 4px; }
+.viriathus-core-app .rich-editor { flex-grow: 1; padding: 16px; color: var(--text-primary); font-size: 15px; line-height: 1.6; outline: none; overflow-y: auto; }
+.viriathus-core-app .rich-editor a { color: var(--primary-accent); text-decoration: underline; }
+.viriathus-core-app .rich-editor:empty:before { content: attr(data-placeholder); color: var(--text-secondary); font-style: italic; }
+
+.viriathus-core-app .preview-panel { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; height: 100%; min-height: 280px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.8); }
+.viriathus-core-app .preview-subject-line { padding: 14px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; background: rgba(255,255,255,0.02); color: var(--text-secondary); }
+.viriathus-core-app .preview-body-scroll { padding: 16px; font-size: 14px; overflow-y: auto; flex-grow: 1; line-height: 1.6; color: #d1d1d1; }
+
+/* === ADVANCED SETTINGS ACCORDION === */
+.viriathus-core-app .advanced-toggle { display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 12px; cursor: pointer; color: var(--text-secondary); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; margin-top: 10px; }
+.viriathus-core-app .advanced-toggle:hover { background: rgba(212, 175, 55, 0.05); color: var(--primary-accent); border-color: var(--border-color); }
+.viriathus-core-app .advanced-toggle svg.chevron { transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.viriathus-core-app .advanced-toggle.open svg.chevron { transform: rotate(180deg); color: var(--primary-accent); }
+.viriathus-core-app .advanced-content { max-height: 0; overflow: hidden; opacity: 0; transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.viriathus-core-app .advanced-content.open { max-height: 800px; opacity: 1; margin-top: 24px; padding-top: 20px; border-top: 1px dashed rgba(255,255,255,0.1); }
+
+/* === MODALS & OVERLAYS === */
+.viriathus-core-app .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 6, 8, 0.85); backdrop-filter: blur(10px); z-index: 10000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; pointer-events: none; }
+.viriathus-core-app .modal-overlay.active { opacity: 1; pointer-events: auto; }
+.viriathus-core-app .modal-content { background: var(--bg-glass-heavy); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 32px; box-shadow: var(--shadow-volumetric); transform: translateY(20px) scale(0.98); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; max-height: 90vh; overflow-y: auto; }
+.viriathus-core-app .modal-overlay.active .modal-content { transform: translateY(0) scale(1); }
+.viriathus-core-app .settings-size { width: 95%; max-width: 1050px; }
+.viriathus-core-app .wizard-size { width: 95%; max-width: 750px; }
+.viriathus-core-app .modal-header { font-family: var(--font-header); font-size: 1.5rem; color: var(--primary-accent); display: flex; align-items: center; gap: 10px; }
+.viriathus-core-app .spaced-bottom { margin-bottom: 24px; }
+.viriathus-core-app .modal-info-pill { background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); border-left: 3px solid var(--accent-blue-light); border-radius: 8px; padding: 16px; margin-bottom: 24px; font-size: 14px; line-height: 1.6; }
+.viriathus-core-app .close-btn { position: absolute; top: 24px; right: 24px; background: rgba(255,255,255,0.05); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); cursor: pointer; transition: 0.2s; }
+.viriathus-core-app .close-btn:hover { background: rgba(239, 83, 80, 0.1); color: var(--error-color); transform: rotate(90deg); }
+
+/* === WIZARD THREAD INJECTION BOX === */
+.viriathus-core-app .thread-injection-box { margin-bottom: 24px; padding: 20px; background: var(--bg-glass-light); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.2); }
+.viriathus-core-app .thread-injection-label { color: var(--primary-accent); margin-bottom: 12px; display: flex; align-items: center; font-size: 0.85rem; }
+.viriathus-core-app .thread-injection-desc { font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
+.viriathus-core-app .thread-selectors-container { max-height: 250px; overflow-y: auto; padding-right: 8px; }
+.viriathus-core-app .thread-scan-await { text-align: center; color: var(--text-secondary); font-size: 13px; font-style: italic; padding: 20px; }
+.viriathus-core-app .modal-preview-box { background: rgba(0,0,0,0.4); border: 1px dashed rgba(255,255,255,0.1); border-radius: 12px; padding: 20px; margin-top: 16px; max-height: 250px; overflow-y: auto; font-size: 14px; color: #d1d1d1; line-height: 1.6; }
+.viriathus-core-app .modal-preview-subject { font-weight: bold; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text-primary); }
+.viriathus-core-app .wizard-footer { justify-content: flex-end; margin-top: 32px; margin-bottom: 0; }
+
+/* === TABS === */
+.viriathus-core-app .modal-tabs { display: flex; gap: 8px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 24px; }
+.viriathus-core-app .tab-btn { background: transparent; border: none; color: var(--text-secondary); font-family: var(--font-header); font-size: 14px; padding: 14px 28px; cursor: pointer; transition: all 0.3s; text-transform: uppercase; letter-spacing: 1px; border-bottom: 3px solid transparent; border-radius: 12px 12px 0 0; }
+.viriathus-core-app .tab-btn:hover { color: var(--primary-accent); background: rgba(212, 175, 55, 0.05); }
+.viriathus-core-app .tab-btn.active { color: var(--primary-glow); border-bottom-color: var(--primary-accent); font-weight: bold; background: rgba(212, 175, 55, 0.1); }
+.viriathus-core-app .tab-content { display: none; animation: fadeInUp 0.4s ease; }
+.viriathus-core-app .tab-content.active { display: block; }
+
+/* === AUDIT TABLE === */
+.viriathus-core-app .audit-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.viriathus-core-app .audit-subtitle { color: var(--text-secondary); font-size: 14px; }
+.viriathus-core-app .audit-table-container { width: 100%; max-height: 500px; overflow-y: auto; overflow-x: auto; background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); border-radius: 16px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5); }
+.viriathus-core-app .audit-table { width: 100%; border-collapse: separate; border-spacing: 0; text-align: left; font-size: 13px; }
+.viriathus-core-app .audit-table th { background: rgba(20, 24, 33, 0.95); color: var(--primary-accent); padding: 18px 16px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(255,255,255,0.05); position: sticky; top: 0; z-index: 10; font-family: var(--font-header); font-size: 12px; backdrop-filter: blur(10px); }
+.viriathus-core-app .audit-table td { padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.02); color: var(--text-primary); transition: background 0.2s; }
+.viriathus-core-app .audit-table tr:hover td { background: rgba(255,255,255,0.02); }
+.viriathus-core-app .table-loading { text-align: center; padding: 40px !important; color: var(--primary-accent); font-style: italic; }
+
+/* === FLOATING ICONS & GUIDE === */
+.viriathus-core-app .floating-icon-group { position: fixed; top: 30px; right: 30px; display: flex; gap: 15px; z-index: 100; }
+.viriathus-core-app .trigger-btn { width: 48px; height: 48px; border-radius: 50%; background: var(--bg-glass-heavy); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: var(--text-secondary); cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.5); backdrop-filter: blur(8px); transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+.viriathus-core-app .trigger-btn:hover, .viriathus-core-app .trigger-btn:focus-visible { transform: scale(1.1); color: var(--primary-glow); border-color: var(--border-glow); box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3); }
+.viriathus-core-app .trigger-btn svg { width: 22px; height: 22px; }
+.viriathus-core-app .settings-trigger svg { transition: transform 0.6s ease; }
+.viriathus-core-app .settings-trigger:hover svg, .viriathus-core-app .settings-trigger:focus-visible svg { transform: rotate(180deg); }
+
+.viriathus-core-app .guide-panel { position: fixed; top: 0; right: -450px; width: 400px; max-width: 100%; height: 100vh; background: var(--bg-glass-heavy); border-left: 1px solid rgba(255,255,255,0.1); box-shadow: -10px 0 40px rgba(0,0,0,0.8); z-index: 10001; transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1); overflow-y: auto; display: flex; flex-direction: column; backdrop-filter: blur(20px); }
+.viriathus-core-app .guide-panel.open { right: 0; }
+.viriathus-core-app .guide-header { padding: 30px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: rgba(10, 12, 16, 0.8); z-index: 10; backdrop-filter: blur(10px); }
+.viriathus-core-app .guide-header h2 { font-family: var(--font-header); color: var(--primary-accent); font-size: 1.5rem; margin: 0; letter-spacing: 1px;}
+.viriathus-core-app .guide-close { background: rgba(255,255,255,0.05); border: none; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); cursor: pointer; transition: 0.2s; }
+.viriathus-core-app .guide-close:hover, .viriathus-core-app .guide-close:focus-visible { background: rgba(239, 83, 80, 0.1); color: var(--error-color); }
+.viriathus-core-app .guide-content { padding: 30px; display: flex; flex-direction: column; gap: 30px; }
+.viriathus-core-app .guide-section h3 { font-size: 1.1rem; color: #fff; margin-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 12px; }
+.viriathus-core-app .guide-section p, .viriathus-core-app .guide-section ul { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 15px; }
+.viriathus-core-app .guide-section ul { padding-left: 20px; }
+
+/* === ALERTS & LOADER (KEYFRAMES INTEGRATED) === */
+.viriathus-core-app .global-banner { position: fixed; top: 0; left: 50%; transform: translate(-50%, -100%); padding: 16px 32px; border-radius: 0 0 20px 20px; font-family: var(--font-main); font-weight: 700; font-size: 15px; z-index: 10001; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.8); text-align: center; min-width: 320px; border: 1px solid transparent; border-top: none; backdrop-filter: blur(12px); }
+.viriathus-core-app .global-banner.success { background-color: rgba(20, 35, 25, 0.95); color: var(--success-color); border-color: rgba(102, 187, 106, 0.3); }
+.viriathus-core-app .global-banner.error { background-color: rgba(40, 15, 15, 0.95); color: var(--error-color); border-color: rgba(239, 83, 80, 0.3); }
+.viriathus-core-app .loader-backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 6, 8, 0.9); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); }
+.viriathus-core-app .loader-glass-panel { text-align: center; width: 85%; max-width: 450px; background: var(--bg-glass-heavy); padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.05); box-shadow: var(--shadow-volumetric); backdrop-filter: blur(16px); }
+.viriathus-core-app .spinner { border: 3px solid rgba(255,255,255,0.05); border-top: 3px solid var(--primary-accent); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite; margin: 0 auto 20px auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.viriathus-core-app .loader-title { margin-bottom: 5px; color: var(--primary-accent); font-family: var(--font-header); letter-spacing: 2px; }
+.viriathus-core-app .progress-wrapper { width: 100%; margin-top: 24px; }
+.viriathus-core-app .progress-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px; }
+.viriathus-core-app .progress-status-text { font-size: 11px; color: var(--text-secondary); text-transform: uppercase; font-weight: bold; letter-spacing: 0.5px; }
+.viriathus-core-app .progress-perc-text { font-size: 18px; color: var(--primary-accent); font-weight: bold; font-family: var(--font-mono); }
+.viriathus-core-app .progress-track { background: rgba(0,0,0,0.6); border-radius: 12px; width: 100%; height: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); box-shadow: inset 0 2px 5px rgba(0,0,0,0.8); }
+.viriathus-core-app .progress-fill { width: 0%; height: 100%; background: var(--primary-accent); transition: width 0.2s linear; box-shadow: 0 0 15px var(--primary-accent); }
+.viriathus-core-app .progress-count { font-size: 12px; color: var(--text-secondary); margin-top: 12px; font-family: var(--font-mono); }
+.viriathus-core-app .badge { background: rgba(212, 175, 55, 0.1); color: var(--primary-glow); padding: 4px 10px; border-radius: 12px; font-size: 11px; margin-left: 8px; border: 1px solid rgba(212, 175, 55, 0.3); font-weight: bold; display: inline-block; white-space: nowrap; font-family: var(--font-mono); }
+
+/* CORE ANIMATION V4.4.0: SHIMMER BAR */
+@keyframes shimmer-bar {
+0% { background-position: -200% center; }
+100% { background-position: 200% center; }
+}
+.viriathus-core-app .progress-active {
+background: linear-gradient(90deg, #b28d1c 0%, var(--primary-accent) 40%, #fff 50%, var(--primary-accent) 60%, #b28d1c 100%) !important;
+background-size: 200% auto !important;
+animation: shimmer-bar 1.5s linear infinite !important;
+}
+.viriathus-core-app .progress-success {
+background: var(--success-color) !important;
+box-shadow: 0 0 20px rgba(102, 187, 106, 0.5) !important;
+}
+
+/* === RESPONSIVE RULES === */
+@media (max-width: 768px) {
+.viriathus-core-app .editor-layout, .viriathus-core-app .form-grid-2 { grid-template-columns: 1fr; }
+.viriathus-core-app .action-row.glass-row { flex-direction: column; align-items: stretch; }
+.viriathus-core-app .width-restricted { max-width: 100%; }
+.viriathus-core-app .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+<!-- MASTER WRAPPER PER ISOLAMENTO CSS E DENSITY CONTROL -->
+<div class="viriathus-core-app">
+
+<!-- GPU-ACCELERATED BACKGROUND REPLACING JS CANVAS -->
+<div class="css-mesh-background"></div>
+<div class="vignette-overlay"></div>
+
+<!-- LOADER MODERNO E PULITO (ZERO INLINE STYLES) -->
+<div id="loader" class="loader-backdrop hidden">
+<div class="loader-glass-panel">
+<div class="spinner" id="loader-spinner"></div>
+<h3 id="loader-message" class="loader-title">Processing...</h3>
+<div id="progress-wrapper" class="progress-wrapper hidden">
+<div class="progress-header">
+<span id="progress-status" class="progress-status-text">Initializing Connection...</span>
+<span id="progress-perc" class="progress-perc-text">0%</span>
+</div>
+<div class="progress-track">
+<div id="progress-bar" class="progress-fill"></div>
+</div>
+<p id="progress-text" class="progress-count">0 of 0 Completed</p>
+</div>
+</div>
+</div>
+
+<div id="globalBanner" class="global-banner"></div>
+
+<!-- FLOATING CONTROLS -->
+<div class="floating-icon-group">
+<div class="trigger-btn help-trigger" onclick="toggleGuide()" title="User Guide" tabindex="0">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+</svg>
+</div>
+<div class="trigger-btn settings-trigger" onclick="openSettings()" title="System Settings" tabindex="0">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+<path fill-rule="evenodd" d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" clip-rule="evenodd" />
+</svg>
+</div>
+</div>
+
+<!-- GUIDE PANEL -->
+<div class="guide-panel" id="guide-panel">
+<div class="guide-header">
+<h2>Quick Guide</h2>
+<button class="guide-close" onclick="toggleGuide()" tabindex="0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+</button>
+</div>
+<div class="guide-content">
+<div class="guide-section">
+<h3>Core Concept</h3>
+<p>Viriathus is an advanced batch automation engine. It allows you to select multiple agents simultaneously and automatically generate personalized emails, duplicate Drive files, and write an Audit Log in a single execution.</p>
+</div>
+<div class="guide-section">
+<h3>The 3-Step Process</h3>
+<ul>
+<li><strong>1. Select Workflow:</strong> Choose the target group.</li>
+<li><strong>2. Select Agents:</strong> Use the multi-select dropdown.</li>
+<li><strong>3. Proceed & Confirm:</strong> Pick a template, select the specific target thread for each agent in the live Wizard, review the preview, and click Generate.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- SETTINGS MODAL -->
+<div id="settings-modal" class="modal-overlay">
+<div class="modal-content settings-size">
+<button class="close-btn" onclick="closeSettings()" title="Close" tabindex="0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+</button>
+<div class="modal-header spaced-bottom">System Control Center</div>
+<div class="modal-tabs">
+<button class="tab-btn active" id="btn-tab-builder" onclick="switchSettingsTab('builder')">Template Builder</button>
+<button class="tab-btn" id="btn-tab-audit" onclick="switchSettingsTab('audit')">Audit History</button>
+</div>
+
+<!-- TAB: BUILDER -->
+<div id="tab-builder" class="tab-content active">
+<div class="action-row glass-row">
+<div class="form-group flex-grow">
+<label>Manage Existing Templates</label>
+<div class="flex-row-gap">
+<select id="template-select" class="flex-grow" onchange="loadSelectedTemplate()">
+<option value="">Loading...</option>
+</select>
+<button class="btn primary" onclick="clearTemplateForm()">➕ Create New</button>
+</div>
+</div>
+<button class="btn danger no-margin-bottom" onclick="deleteCurrentTemplate()">Delete</button>
+</div>
+
+<div class="token-panel">
+<label>Visual Tokens (Click to insert into Editor/Fields)</label>
+<div class="token-grid">
+<button class="token-pill" type="button" onclick="insertVisualToken('AGENT_NAME')">👤 Agent Name</button>
+<button class="token-pill" type="button" onclick="insertVisualToken('AGENT_ID')">🆔 Agent LDAP</button>
+<button class="token-pill" type="button" onclick="insertVisualToken('DATE')">📅 Offline Date</button>
+<button class="token-pill" type="button" onclick="insertVisualToken('FILE_URL')">🔗 Personalized Link</button>
+</div>
+</div>
+
+<div class="form-grid-2">
+<div class="form-group">
+<label>Linked Workflow <span class="badge">Required</span></label>
+<select id="setting-target-workflow"></select>
+</div>
+<div class="form-group">
+<label>Manager CCs (Comma separated)</label>
+<input type="text" id="setting-cc" class="track-focus" placeholder="manager1@example.com, manager2@example.com">
+</div>
+</div>
+
+<div class="form-grid-2">
+<div class="form-group">
+<label>Google Drive File URL (Template)</label>
+<input type="text" id="setting-drive-id" class="track-focus" onblur="smartParseUrl(this)" placeholder="Paste full Google Doc/Sheet URL here">
+</div>
+<div class="form-group">
+<label>Destination Folder URL</label>
+<input type="text" id="setting-destination-folder" class="track-focus" onblur="smartParseUrl(this)" placeholder="Paste full Folder URL here">
+</div>
+</div>
+
+<div class="form-group margin-bottom-lg">
+<label>Email Subject (Fallback / New Thread)</label>
+<input type="text" id="setting-subject" class="track-focus" placeholder="E.g.: {{AGENT_ID}} || Offline Day">
+</div>
+
+<div class="editor-layout">
+<div class="form-group">
+<label>Email Composition</label>
+<div class="editor-container">
+<div class="editor-toolbar">
+<button type="button" onclick="formatText('bold')" title="Bold"><b>B</b></button>
+<button type="button" onclick="formatText('italic')" title="Italic"><i>I</i></button>
+<button type="button" onclick="formatText('underline')" title="Underline"><u>U</u></button>
+<div class="separator"></div>
+<button type="button" onclick="insertHyperlink()" title="Insert Link">🔗 Link</button>
+</div>
+<div id="setting-body-editor" class="rich-editor" contenteditable="true" data-placeholder="Write your email content here..."></div>
+</div>
+</div>
+<div class="form-group">
+<label>Live Real-Time Preview (Simulated)</label>
+<div id="live-preview-box" class="preview-panel">
+<div class="preview-subject-line"><strong>Subject:</strong> <span id="preview-subject-text"></span></div>
+<div id="preview-body-content" class="preview-body-scroll"></div>
+</div>
+</div>
+</div>
+
+<div class="action-row glass-row-footer">
+<div class="form-group">
+<label>Template Name</label>
+<input type="text" id="new-template-name" class="track-focus" placeholder="E.g.: Admin Notice O18">
+</div>
+<button class="btn primary no-margin-bottom" id="save-template-btn" onclick="saveAsTemplate()">Commit & Sync to DB</button>
+</div>
+</div>
+
+<!-- TAB: AUDIT -->
+<div id="tab-audit" class="tab-content hidden">
+<div class="audit-header-row">
+<p class="audit-subtitle">Real-time view of the generated drafts and operations log.</p>
+<button class="btn btn-small" onclick="fetchAuditLogs()">🔄 Refresh Logs</button>
+</div>
+<div class="audit-table-container">
+<table class="audit-table">
+<thead>
+<tr>
+<th>Timestamp</th>
+<th>Agent Name</th>
+<th>Workflow</th>
+<th>Target Date</th>
+<th>Action Taken</th>
+</tr>
+</thead>
+<tbody id="audit-table-body">
+<!-- PRE-LOAD SKELETON SCREENS -->
+<tr>
+<td><div class="skeleton-box"></div></td>
+<td><div class="skeleton-box w-80"></div></td>
+<td><div class="skeleton-box w-60"></div></td>
+<td><div class="skeleton-box w-50"></div></td>
+<td><div class="skeleton-box w-90"></div></td>
+</tr>
+<tr>
+<td><div class="skeleton-box"></div></td>
+<td><div class="skeleton-box w-70"></div></td>
+<td><div class="skeleton-box w-60"></div></td>
+<td><div class="skeleton-box w-50"></div></td>
+<td><div class="skeleton-box w-80"></div></td>
+</tr>
+<tr>
+<td><div class="skeleton-box"></div></td>
+<td><div class="skeleton-box w-90"></div></td>
+<td><div class="skeleton-box w-60"></div></td>
+<td><div class="skeleton-box w-50"></div></td>
+<td><div class="skeleton-box w-100"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- WIZARD MODAL V4.4.0 -->
+<div id="wizard-modal" class="modal-overlay">
+<div class="modal-content wizard-size">
+<button class="close-btn" onclick="closeWizard()" tabindex="0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+<div class="modal-header">Pre-Flight & Execution Confirmation</div>
+<div id="wiz-info" class="modal-info-pill"></div>
+<div class="form-group margin-bottom-lg">
+<label>Select Template</label>
+<select id="wizard-template-select" onchange="updateWizardPreview()"></select>
+</div>
+
+<div class="form-group thread-injection-box">
+<label class="thread-injection-label">
+<svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+Thread Injection Configuration (Live Search)
+</label>
+<p class="thread-injection-desc">Select the specific thread you want to reply to for each agent. If set to 'Create New Thread', a standalone draft will be generated.</p>
+<div id="wiz-thread-selectors" class="thread-selectors-container">
+<!-- PRE-LOAD SKELETON SCREENS FOR WIZARD -->
+<div class="skeleton-box height-lg margin-bottom-sm w-100"></div>
+<div class="skeleton-box height-lg margin-bottom-sm w-100"></div>
+</div>
+</div>
+<div class="modal-preview-box">
+<div class="modal-preview-subject"><strong>Preview Subject:</strong> <span id="wiz-preview-subject"></span></div>
+<div id="wiz-preview-body"></div>
+</div>
+<div class="action-row wizard-footer">
+<button class="btn" onclick="closeWizard()">Cancel</button>
+<button class="btn primary" id="confirm-draft-btn" onclick="executePrepareEmail()" disabled>Launch Automation</button>
+</div>
+</div>
+</div>
+
+<!-- MAIN DASHBOARD -->
+<main class="main-content">
+<div class="brand-header-wrapper">
+<div class="logo-container">
+<img src="https://i.postimg.cc/nLxkRVJp/preview.png" alt="Viriathus Logo">
+</div>
+<span class="logo-text">VIRIATHUS</span>
+</div>
+
+<div class="content-card">
+<div class="collapsible-header">
+<h2>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+<path d="M17.25 6.75a.75.75 0 00-1.5 0v2.5h-2.5a.75.75 0 000 1.5h2.5v2.5a.75.75 0 001.5 0v-2.5h2.5a.75.75 0 000-1.5h-2.5v-2.5z" />
+<path fill-rule="evenodd" d="M6 3a3 3 0 00-3 3v12a3 3 0 003 3h12a3 3 0 003-3V9a3 3 0 00-3-3H6zm2.25 3.5a.75.75 0 00-1.5 0v10.5a.75.75 0 001.5 0V6.5z" />
+</svg>
+Draft & Agent Management
+</h2>
+</div>
+
+<div class="action-row glass-row align-start margin-bottom-xl">
+<div class="form-group width-restricted">
+<label>1. Target Workflow <span class="badge">Dynamic</span></label>
+<select id="workflow-select" onchange="triggerWorkflowChange(true)"></select>
+</div>
+<div class="form-group">
+<label>2. Target Agents</label>
+<div class="custom-multiselect" id="custom-agent-select" tabindex="0" onkeydown="handleDropdownKey(event)">
+<div class="custom-multiselect-header" onclick="toggleMultiSelect()">
+<span id="multiselect-display">Select Agents...</span>
+<svg class="icon-inline accent-color" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+</div>
+<div class="custom-multiselect-options">
+<div class="custom-multiselect-actions">
+<button type="button" onclick="selectAllAgents(event)">Select All</button>
+<button type="button" onclick="deselectAllAgents(event)">Deselect All</button>
+</div>
+<input type="text" class="custom-multiselect-search" id="agent-search" placeholder="Filter agents by name..." onkeyup="filterAgents()">
+<div id="agent-checkbox-list">
+<!-- PRE-LOAD SKELETON FOR DROPDOWN -->
+<div style="padding: 12px 16px;"><div class="skeleton-box w-70"></div></div>
+</div>
+</div>
+</div>
+</div>
+<button class="btn danger margin-top-lg" onclick="removeAgent(event)">Remove Selected</button>
+</div>
+
+<div class="action-row no-margin-bottom">
+<div class="form-group">
+<label>Offline Date</label>
+<input type="date" id="offline-date">
+</div>
+<button class="btn primary flex-grow" onclick="openWizard()">Proceed to Generation</button>
+</div>
+
+<div class="advanced-toggle" onclick="toggleAdvanced()" id="adv-toggle-btn" tabindex="0">
+<div class="flex-center-gap">
+<svg class="icon-std" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+</svg>
+Advanced Database Management
+</div>
+<svg class="chevron icon-std" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+</div>
+<div class="advanced-content" id="advanced-section">
+<div class="form-group margin-bottom-xl">
+<label>Add Agents to Selected Workflow</label>
+<div class="flex-stretch-gap">
+<textarea id="new-agent-ldap-input" class="textarea-single-line" placeholder="E.g., mariorossi, mcalado, jdoe (comma separated)"></textarea>
+<button class="btn" onclick="addAgentBulk(event)">Inject</button>
+</div>
+</div>
+<div class="form-group no-margin-bottom">
+<label>Create New Workflow (Tab)</label>
+<div class="flex-start-gap">
+<input type="text" id="new-workflow-input" class="flex-grow" placeholder="E.g., O18">
+<button class="btn" onclick="createNewWorkflow(event)">Generate Tab</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</div> <!-- Fine .viriathus-core-app -->
+
+<script src="./demo-backend.js"></script>
+<!-- File: JS.html -->
+<script>
+/**
+* ==========================================
+* VIRIATHUS v4.4.1 - Frontend Logic Controller
+* Architect: Hefestus
+* Pattern: ES6+, Keyboard Navigation, CPU-Zero Background, Parser Safe
+* HOTFIX: State Management Tab Visibility (.active class alignment)
+* ==========================================
+*/
+
+let allTemplates = {};
+let allWorkflows = [];
+// Caching Universale del Cursore
+let savedEditorRange = null;
+let lastActiveInput = null;
+let lastInputSelectionStart = 0;
+let lastInputSelectionEnd = 0;
+
+// A11y: Dropdown Keyboard Navigation State
+let currentDropdownIndex = -1;
+const MOCK_DATA = {
+AGENT_NAME: "John Doe",
+AGENT_ID: "jdoe123",
+DATE: new Date().toLocaleDateString('en-GB'),
+FILE_URL: "https://docs.google.com/document/d/sample-id/edit"
+};
+
+/**
+* Sanificazione degli stili CSS lato client
+*/
+const sanitizeHtmlStyles = (htmlString) => {
+if (!htmlString) return "";
+return htmlString.replace(/style\s*=\s*["']([^"']*)["']/gi, (match, styles) => {
+let cleanStyles = styles
+.replace(/(?:background-color|background)\s*:[^;]+;?/gi, '')
+.replace(/color\s*:\s*(?:#e0e0e0|#fff|#ffffff|rgb\(224,\s*224,\s*224\));?/gi, 'color: #e8e8ed;');
+return 'style="' + cleanStyles + '"';
+});
+};
+
+/**
+* Gestione Sistema a Tab (State Alignment Fix)
+*/
+const switchSettingsTab = (tabName) => {
+document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+// HOTFIX V4.4.1: Rimuove .active e .hidden da tutti i pannelli per forzare il reset
+document.querySelectorAll('.tab-content').forEach(tab => {
+tab.classList.remove('active');
+tab.classList.remove('hidden');
+});
+document.getElementById('btn-tab-' + tabName).classList.add('active');
+// HOTFIX V4.4.1: Aggiunge la classe .active per innescare il display:block nel CSS
+document.getElementById('tab-' + tabName).classList.add('active');
+if (tabName === 'audit') fetchAuditLogs();
+};
+
+/**
+* Recupera e renderizza lo storico Audit (Utilizza Skeleton in CSS)
+*/
+const fetchAuditLogs = () => {
+const tbody = document.getElementById('audit-table-body');
+tbody.innerHTML = '<tr><td><div class="skeleton-box"></div></td><td><div class="skeleton-box w-80"></div></td><td><div class="skeleton-box w-60"></div></td><td><div class="skeleton-box w-50"></div></td><td><div class="skeleton-box w-90"></div></td></tr><tr><td><div class="skeleton-box"></div></td><td><div class="skeleton-box w-70"></div></td><td><div class="skeleton-box w-60"></div></td><td><div class="skeleton-box w-50"></div></td><td><div class="skeleton-box w-80"></div></td></tr>';
+google.script.run
+.withSuccessHandler(logs => {
+if (!logs || logs.length === 0) {
+tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--text-secondary);">No audit records found.</td></tr>';
+return;
+}
+tbody.innerHTML = logs.map(log => {
+const badgeStyle = (log.action.includes('REPLY INJECTED'))
+? 'border-color: rgba(102, 187, 106, 0.4); color: var(--success-color); background: rgba(102, 187, 106, 0.05);'
+: 'border-color: rgba(58, 70, 96, 0.5); color: var(--text-primary); background: rgba(58, 70, 96, 0.1);';
+return '<tr>' +
+'<td style="font-family: var(--font-mono); color: var(--text-secondary);">' + log.timestamp + '</td>' +
+'<td style="font-weight: bold; color: var(--text-primary);">' + log.agentName + '</td>' +
+'<td style="color: var(--primary-accent);">' + log.workflow + '</td>' +
+'<td>' + log.targetDate + '</td>' +
+'<td><span class="badge" style="' + badgeStyle + '">' + log.action + '</span></td>' +
+'</tr>';
+}).join('');
+})
+.withFailureHandler(err => {
+tbody.innerHTML = '<tr><td colspan="5" style="text-align:center; padding: 30px; color: var(--error-color);">Error retrieving logs: ' + err.message + '</td></tr>';
+handleFailure(err);
+})
+.getAuditHistory();
+};
+
+/**
+* Notifiche Globali
+*/
+const showBanner = (message, type = 'success', duration = 4500) => {
+const banner = document.getElementById('globalBanner');
+banner.textContent = message;
+banner.className = 'global-banner ' + type;
+banner.style.transform = 'translate(-50%, 0)';
+setTimeout(() => { banner.style.transform = 'translate(-50%, -100%)'; }, duration);
+};
+
+const showLoading = (message = 'Processing...', isBatch = false) => {
+const title = document.getElementById('loader-message');
+title.textContent = message;
+const loader = document.getElementById('loader');
+const progressWrapper = document.getElementById('progress-wrapper');
+const spinner = document.getElementById('loader-spinner');
+const bar = document.getElementById('progress-bar');
+loader.classList.remove('hidden');
+if (isBatch) {
+spinner.classList.add('hidden');
+progressWrapper.classList.remove('hidden');
+bar.classList.remove('progress-success');
+bar.style.transition = 'width 0.2s linear';
+bar.style.width = '0%';
+document.getElementById('progress-perc').innerText = '0%';
+document.getElementById('progress-status').innerText = 'Establishing Connection...';
+document.getElementById('progress-text').innerText = '0 of 0 Completed';
+} else {
+spinner.classList.remove('hidden');
+progressWrapper.classList.add('hidden');
+}
+};
+
+const hideLoading = () => { document.getElementById('loader').classList.add('hidden'); };
+
+const handleFailure = (err) => {
+hideLoading();
+showBanner(err.message || String(err), 'error', 6000);
+};
+
+const smartParseUrl = (inputElement) => {
+const url = inputElement.value.trim();
+if (!url || url.length < 25) return;
+const match = url.match(/[-\w]{25,}/);
+if (match && match[0] !== url) {
+inputElement.value = match[0];
+showBanner("Drive ID extracted successfully from URL!", "success", 3000);
+updateLivePreview();
+}
+};
+
+const updateInputFocus = (e) => {
+lastActiveInput = e.target;
+lastInputSelectionStart = e.target.selectionStart;
+lastInputSelectionEnd = e.target.selectionEnd;
+savedEditorRange = null;
+};
+
+const updateEditorFocus = () => {
+const selection = window.getSelection();
+if (selection.rangeCount > 0) {
+savedEditorRange = selection.getRangeAt(0);
+lastActiveInput = null;
+}
+};
+
+const insertVisualToken = (type) => {
+if (lastActiveInput && lastActiveInput.classList.contains('track-focus')) {
+const start = lastInputSelectionStart;
+const end = lastInputSelectionEnd;
+const text = lastActiveInput.value;
+lastActiveInput.value = text.substring(0, start) + '{{' + type + '}}' + text.substring(end);
+lastActiveInput.focus();
+lastActiveInput.selectionStart = lastActiveInput.selectionEnd = start + type.length + 4;
+updateInputFocus({target: lastActiveInput});
+updateLivePreview();
+return;
+}
+
+const editor = document.getElementById('setting-body-editor');
+editor.focus();
+if (savedEditorRange) {
+const selection = window.getSelection();
+selection.removeAllRanges();
+selection.addRange(savedEditorRange);
+}
+const htmlPill = '<span class="visual-token" contenteditable="false" data-token="' + type + '">{{' + type + '}}</span>&nbsp;';
+document.execCommand('insertHTML', false, htmlPill);
+updateEditorFocus();
+updateLivePreview();
+};
+
+const updateLivePreview = () => {
+const subjectField = document.getElementById('setting-subject').value;
+const editorContent = document.getElementById('setting-body-editor').innerHTML;
+const driveId = document.getElementById('setting-drive-id').value;
+
+let previewSubject = subjectField
+.replace(/{{AGENT_NAME}}/g, MOCK_DATA.AGENT_NAME)
+.replace(/{{AGENT_ID}}/g, MOCK_DATA.AGENT_ID)
+.replace(/{{DATE}}/g, MOCK_DATA.DATE);
+let previewBody = sanitizeHtmlStyles(editorContent);
+const fileUrl = driveId ? 'https://drive.google.com/file/d/' + driveId.trim() + '/view' : MOCK_DATA.FILE_URL;
+const prettyLink = '<a href="' + fileUrl + '" target="_blank" style="color: var(--primary-glow); font-weight: bold; text-decoration: underline;">Click Here</a>';
+
+previewBody = previewBody.replace(/href=["']{{FILE_URL}}["']/g, 'href="' + fileUrl + '"');
+
+previewBody = previewBody.replace(/<span class="visual-token"[^>]*>{{(.*?)}}<\/span>/g, (match, tokenName) => {
+if (tokenName === 'FILE_URL') return prettyLink;
+return '<strong style="color: #fff;">' + (MOCK_DATA[tokenName] || tokenName) + '</strong>';
+});
+previewBody = previewBody.replace(/{{(.*?)}}/g, (match, tokenName) => {
+if (tokenName === 'FILE_URL') return prettyLink;
+return '<strong style="color: #fff;">' + (MOCK_DATA[tokenName] || tokenName) + '</strong>';
+});
+
+document.getElementById('preview-subject-text').innerHTML = previewSubject || '<em>No subject provided</em>';
+document.getElementById('preview-body-content').innerHTML = previewBody || '<em>Email body is empty...</em>';
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+document.getElementById('offline-date').value = new Date().toISOString().split('T')[0];
+const editor = document.getElementById('setting-body-editor');
+document.querySelectorAll('.track-focus').forEach(el => {
+el.addEventListener('input', updateLivePreview);
+el.addEventListener('keyup', (e) => { updateLivePreview(); updateInputFocus(e); });
+el.addEventListener('mouseup', updateInputFocus);
+el.addEventListener('blur', updateInputFocus);
+});
+
+if (editor) {
+editor.addEventListener('input', updateLivePreview);
+editor.addEventListener('keyup', (e) => { updateLivePreview(); updateEditorFocus(); });
+editor.addEventListener('mouseup', updateEditorFocus);
+editor.addEventListener('blur', updateEditorFocus);
+}
+initApp();
+});
+
+const initApp = () => {
+showLoading('Standardizing BPO Environment...');
+google.script.run
+.withSuccessHandler(response => {
+hideLoading();
+if (response.success) {
+allWorkflows = response.workflows;
+allTemplates = response.templates;
+refreshDropdowns();
+} else {
+handleFailure(response.error);
+}
+})
+.withFailureHandler(handleFailure)
+.getInitialData();
+};
+
+const refreshDropdowns = () => {
+const workflowSelect = document.getElementById('workflow-select');
+const targetSelect = document.getElementById('setting-target-workflow');
+const templateSelect = document.getElementById('template-select');
+workflowSelect.innerHTML = '<option value="" disabled selected>Select Workflow...</option>';
+targetSelect.innerHTML = '<option value="" disabled selected>Select Associated Workflow...</option>';
+allWorkflows.forEach(wf => {
+workflowSelect.add(new Option(wf, wf));
+targetSelect.add(new Option(wf, wf));
+});
+
+templateSelect.innerHTML = '<option value="">Load Existing Template...</option>';
+Object.keys(allTemplates).forEach(templateName => {
+templateSelect.add(new Option(templateName, templateName));
+});
+};
+
+const loadSelectedTemplate = () => {
+const name = document.getElementById('template-select').value;
+const templateData = allTemplates[name];
+if (templateData) {
+document.getElementById('setting-target-workflow').value = templateData.targetWorkflow || '';
+document.getElementById('setting-drive-id').value = templateData.driveFileId || '';
+document.getElementById('setting-destination-folder').value = templateData.destinationFolderId || '';
+document.getElementById('setting-cc').value = templateData.ccEmails || '';
+document.getElementById('setting-subject').value = templateData.emailSubject || '';
+document.getElementById('setting-body-editor').innerHTML = templateData.emailBody || '';
+document.getElementById('new-template-name').value = name;
+lastActiveInput = null;
+updateEditorFocus();
+updateLivePreview();
+}
+};
+
+const clearTemplateForm = () => {
+document.getElementById('template-select').value = "";
+document.getElementById('setting-target-workflow').value = "";
+document.getElementById('setting-drive-id').value = "";
+document.getElementById('setting-destination-folder').value = "";
+document.getElementById('setting-cc').value = "";
+document.getElementById('setting-subject').value = "";
+document.getElementById('setting-body-editor').innerHTML = "";
+document.getElementById('new-template-name').value = "";
+lastActiveInput = null;
+savedEditorRange = null;
+updateLivePreview();
+document.getElementById('setting-target-workflow').focus();
+showBanner("Form reset. Ready to create a new template.", "success");
+};
+
+const saveAsTemplate = () => {
+const name = document.getElementById('new-template-name').value.trim();
+const editor = document.getElementById('setting-body-editor');
+const driveId = document.getElementById('setting-drive-id').value.trim();
+let bodyHtml = sanitizeHtmlStyles(editor.innerHTML);
+if (!name) return showBanner("Please enter a Template Name", "error");
+const targetWorkflow = document.getElementById('setting-target-workflow').value;
+if (!targetWorkflow) return showBanner("Please select a Linked Workflow", "error");
+
+if (driveId && !bodyHtml.includes('FILE_URL')) {
+const proceed = confirm("Caution: You attached a Google Drive file, but the {{FILE_URL}} token is missing from the email body. Proceed anyway?");
+if (!proceed) return;
+}
+
+const data = {
+targetWorkflow: targetWorkflow,
+driveFileId: driveId,
+destinationFolderId: document.getElementById('setting-destination-folder').value.trim(),
+ccEmails: document.getElementById('setting-cc').value.trim(),
+emailSubject: document.getElementById('setting-subject').value.trim(),
+emailBody: bodyHtml
+};
+
+showLoading('Syncing template to Cloud Database...');
+google.script.run
+.withSuccessHandler(res => {
+hideLoading();
+if(res.success) {
+allTemplates = res.templates;
+refreshDropdowns();
+document.getElementById('template-select').value = name;
+showBanner(res.message, "success");
+} else { showBanner(res.error, "error"); }
+})
+.withFailureHandler(handleFailure)
+.saveTemplate(name, data);
+};
+
+const deleteCurrentTemplate = () => {
+const name = document.getElementById('template-select').value;
+if (!name) return showBanner("Please select a template to delete", "error");
+if (!confirm('Are you sure you want to permanently delete ' + name + '?')) return;
+showLoading('Deleting Template from Database...');
+google.script.run
+.withSuccessHandler(res => {
+hideLoading();
+if(res.success) {
+allTemplates = res.templates;
+refreshDropdowns();
+clearTemplateForm();
+showBanner(res.message, "success");
+} else { showBanner(res.error, "error"); }
+})
+.withFailureHandler(handleFailure)
+.deleteTemplate(name);
+};
+
+// A11y: Navigazione a Tastiera per Multiselect
+const toggleMultiSelect = () => {
+const select = document.getElementById('custom-agent-select');
+select.classList.toggle('open');
+document.querySelector('.custom-multiselect-header').classList.toggle('active');
+if (select.classList.contains('open')) {
+currentDropdownIndex = -1;
+document.getElementById('agent-search').focus();
+} else {
+select.focus();
+}
+};
+
+const handleDropdownKey = (e) => {
+const select = document.getElementById('custom-agent-select');
+if (!select.classList.contains('open')) {
+if (e.key === 'Enter' || e.key === ' ') {
+e.preventDefault();
+toggleMultiSelect();
+}
+return;
+}
+
+const options = Array.from(document.querySelectorAll('.custom-option:not([style*="display: none"])'));
+
+if (e.key === 'Escape') {
+e.preventDefault();
+toggleMultiSelect();
+} else if (e.key === 'ArrowDown') {
+e.preventDefault();
+currentDropdownIndex = (currentDropdownIndex + 1) % options.length;
+updateDropdownHighlight(options);
+} else if (e.key === 'ArrowUp') {
+e.preventDefault();
+currentDropdownIndex = (currentDropdownIndex - 1 + options.length) % options.length;
+updateDropdownHighlight(options);
+} else if (e.key === 'Enter') {
+if (document.activeElement.id === 'agent-search' && currentDropdownIndex === -1) return;
+e.preventDefault();
+if (currentDropdownIndex >= 0 && options[currentDropdownIndex]) {
+const cb = options[currentDropdownIndex].querySelector('input[type="checkbox"]');
+if (cb) {
+cb.checked = !cb.checked;
+updateMultiSelectDisplay();
+}
+}
+}
+};
+
+const updateDropdownHighlight = (options) => {
+options.forEach((opt, idx) => {
+if (idx === currentDropdownIndex) {
+opt.style.backgroundColor = 'rgba(212, 175, 55, 0.2)';
+opt.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+} else {
+opt.style.backgroundColor = '';
+}
+});
+};
+
+document.addEventListener('click', (event) => {
+const select = document.getElementById('custom-agent-select');
+if (select && !select.contains(event.target)) {
+select.classList.remove('open');
+const header = document.querySelector('.custom-multiselect-header');
+if(header) header.classList.remove('active');
+}
+});
+
+const updateMultiSelectDisplay = () => {
+const checkboxes = document.querySelectorAll('.agent-cb:checked');
+const display = document.getElementById('multiselect-display');
+display.style.fontWeight = 'normal';
+
+if (checkboxes.length === 0) {
+display.textContent = 'Select Agent(s)...';
+display.style.color = 'var(--text-secondary)';
+} else if (checkboxes.length <= 3) {
+const names = Array.from(checkboxes).map(cb => cb.dataset.name);
+display.textContent = names.join(', ');
+display.style.color = 'var(--text-primary)';
+} else {
+display.textContent = checkboxes.length + ' agents selected';
+display.style.color = 'var(--primary-accent)';
+display.style.fontWeight = 'bold';
+}
+};
+
+const selectAllAgents = (event) => {
+event.stopPropagation();
+document.querySelectorAll('.custom-option:not([style*="display: none"]) .agent-cb').forEach(cb => cb.checked = true);
+updateMultiSelectDisplay();
+};
+
+const deselectAllAgents = (event) => {
+event.stopPropagation();
+document.querySelectorAll('.agent-cb').forEach(cb => cb.checked = false);
+updateMultiSelectDisplay();
+};
+
+const filterAgents = () => {
+const query = document.getElementById('agent-search').value.toLowerCase();
+document.querySelectorAll('.custom-option').forEach(label => {
+const name = label.textContent.toLowerCase();
+label.style.display = name.includes(query) ? 'flex' : 'none';
+});
+currentDropdownIndex = -1;
+};
+
+const getSelectedAgentsData = () => {
+const checkboxes = document.querySelectorAll('.agent-cb:checked');
+return {
+ids: Array.from(checkboxes).map(cb => cb.value),
+names: Array.from(checkboxes).map(cb => cb.dataset.name)
+};
+};
+
+const triggerWorkflowChange = (isSwitchingWorkflow = true) => {
+const wf = document.getElementById('workflow-select').value;
+if(!wf) return;
+const container = document.getElementById('agent-checkbox-list');
+// Iniezione Skeleton Screen pre-caricamento
+container.innerHTML = '<div style="padding: 12px 16px;"><div class="skeleton-box w-90"></div></div><div style="padding: 12px 16px;"><div class="skeleton-box w-70"></div></div><div style="padding: 12px 16px;"><div class="skeleton-box w-80"></div></div>';
+google.script.run
+.withSuccessHandler(agents => {
+const currentlySelected = isSwitchingWorkflow ? [] : getSelectedAgentsData().ids;
+container.innerHTML = '';
+if (agents && agents.length > 0) {
+agents.forEach(agent => {
+const label = document.createElement('label');
+label.className = 'custom-option';
+const cb = document.createElement('input');
+cb.type = 'checkbox';
+cb.value = agent.id;
+cb.dataset.name = agent.name;
+cb.className = 'agent-cb';
+if (currentlySelected.includes(agent.id)) cb.checked = true;
+cb.addEventListener('change', updateMultiSelectDisplay);
+label.append(cb, document.createTextNode(agent.name));
+container.appendChild(label);
+});
+} else {
+container.innerHTML = '<div style="padding:15px; text-align:center; color: var(--text-secondary);">No agents found</div>';
+}
+updateMultiSelectDisplay();
+})
+.withFailureHandler(handleFailure)
+.getAgentsByWorkflow(wf);
+};
+
+const createNewWorkflow = (event) => {
+const input = document.getElementById('new-workflow-input');
+const name = input.value.trim();
+if(!name) return showBanner('Please enter a valid Workflow Tab name.', 'error');
+showLoading('Generating Workflow Tab ' + name + '...');
+const btn = event.currentTarget; btn.disabled = true;
+google.script.run
+.withSuccessHandler(res => {
+hideLoading();
+btn.disabled = false;
+if(res.success) {
+allWorkflows = res.workflows;
+refreshDropdowns();
+document.getElementById('workflow-select').value = name;
+triggerWorkflowChange(true);
+input.value = '';
+showBanner(res.message, 'success');
+} else { showBanner(res.message, 'error'); }
+})
+.withFailureHandler(err => { handleFailure(err); btn.disabled = false; })
+.createWorkflow(name);
+};
+
+const addAgentBulk = (event) => {
+const wf = document.getElementById('workflow-select').value;
+if (!wf) return showBanner('Please select a Target Workflow first.', 'error');
+const input = document.getElementById('new-agent-ldap-input');
+const ldaps = input.value.trim();
+if (!ldaps) return showBanner('Please insert at least one LDAP.', 'error');
+showLoading('Injecting agents into ' + wf + '...');
+const btn = event.currentTarget; btn.disabled = true;
+google.script.run
+.withSuccessHandler(res => {
+hideLoading();
+btn.disabled = false;
+if (res.success) {
+input.value = '';
+triggerWorkflowChange(false);
+showBanner(res.message, 'success');
+} else { showBanner(res.message, 'error'); }
+})
+.withFailureHandler(err => { handleFailure(err); btn.disabled = false; })
+.addAgentsBulk(ldaps, wf);
+};
+
+const removeAgent = (event) => {
+const wf = document.getElementById('workflow-select').value;
+const { ids } = getSelectedAgentsData();
+if (!wf || ids.length === 0) return showBanner('Please select a Workflow and check at least one Agent.', 'error');
+if (!confirm('Warning: You are about to permanently remove ' + ids.length + ' agent(s) from ' + wf + '. Proceed?')) return;
+showLoading('Deleting ' + ids.length + ' agent(s)...');
+const btn = event.currentTarget; btn.disabled = true;
+google.script.run
+.withSuccessHandler(res => {
+hideLoading();
+btn.disabled = false;
+if (res.success) {
+triggerWorkflowChange(false);
+showBanner(res.message, 'success');
+} else { showBanner(res.message, 'error'); }
+})
+.withFailureHandler(err => { handleFailure(err); btn.disabled = false; })
+.deleteAgentsBatch(ids, wf);
+};
+
+const openWizard = () => {
+const wf = document.getElementById('workflow-select').value;
+const { ids, names } = getSelectedAgentsData();
+const dateVal = document.getElementById('offline-date').value;
+if (!wf || ids.length === 0 || !dateVal) {
+return showBanner("Please select a Workflow, at least one Agent, and a valid Date.", "error");
+}
+
+const displayNames = names.length > 4 ? names.slice(0, 4).join(', ') + ' (+' + (names.length - 4) + ' more)' : names.join(', ');
+const dateObj = new Date(dateVal);
+const formattedDate = dateObj.getDate() + '/' + (dateObj.getMonth() + 1) + '/' + dateObj.getFullYear();
+document.getElementById('wiz-info').innerHTML =
+'<strong>Workflow:</strong> <span style="color:var(--text-primary)">' + wf + '</span><br>' +
+'<strong>Target Agent(s) <span class="badge">' + names.length + '</span>:</strong> <span style="color:var(--text-primary)">' + displayNames + '</span><br>' +
+'<strong>Offline Date:</strong> <span style="color:var(--text-primary)">' + formattedDate + '</span>';
+const modal = document.getElementById('wizard-modal');
+Object.assign(modal.dataset, {
+workflow: wf,
+agentIds: JSON.stringify(ids),
+agentNames: JSON.stringify(names),
+dateVal: dateVal
+});
+populateWizardTemplateDropdown(wf);
+modal.classList.add('active');
+
+const selectorsContainer = document.getElementById('wiz-thread-selectors');
+selectorsContainer.innerHTML = '<div class="skeleton-box height-lg margin-bottom-sm w-100"></div><div class="skeleton-box height-lg margin-bottom-sm w-100"></div>';
+document.getElementById('confirm-draft-btn').disabled = true;
+
+google.script.run
+.withSuccessHandler(res => {
+if (res.success) renderThreadSelectors(res.threadsMap, ids, names);
+else selectorsContainer.innerHTML = '<span style="color: var(--error-color);">Live Scan Failed: ' + res.error + '</span>';
+})
+.withFailureHandler(err => {
+selectorsContainer.innerHTML = '<span style="color: var(--error-color);">Live Scan Failed: ' + err.message + '</span>';
+})
+.fetchAgentThreadsForWizard(wf, ids);
+};
+
+const renderThreadSelectors = (threadsMap, agentIds, agentNames) => {
+const container = document.getElementById('wiz-thread-selectors');
+container.innerHTML = '';
+
+agentIds.forEach((id, index) => {
+const name = agentNames[index];
+const threads = threadsMap[id] || [];
+
+let optionsHtml = '<option value="NEW" style="color: var(--primary-glow); font-weight: bold;">[NEW] Create New Standalone Thread</option>';
+if (threads.length > 0) {
+optionsHtml += '<optgroup label="Recent Threads in Gmail">';
+threads.forEach(t => {
+const shortSubject = t.subject.length > 60 ? t.subject.substring(0, 60) + '...' : t.subject;
+optionsHtml += '<option value="' + t.id + '">[' + t.date + '] - ' + shortSubject + '</option>';
+});
+optionsHtml += '</optgroup>';
+} else {
+optionsHtml += '<optgroup label="Recent Threads in Gmail"><option disabled>No recent threads found for ' + id + '</option></optgroup>';
+}
+
+const html = '<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; background: rgba(0, 0, 0, 0.4); padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">' +
+'<div style="font-weight: bold; color: var(--text-primary); font-size: 13px; width: 30%;">' + name + ' <span style="color:var(--text-secondary); font-weight:normal; font-size:11px;">(' + id + ')</span></div>' +
+'<select id="thread-select-' + id + '" style="width: 68%; height: 38px; padding: 0 10px; font-size: 12px;">' +
+optionsHtml +
+'</select>' +
+'</div>';
+container.insertAdjacentHTML('beforeend', html);
+});
+
+document.getElementById('confirm-draft-btn').disabled = false;
+};
+
+const populateWizardTemplateDropdown = (workflowName) => {
+const select = document.getElementById('wizard-template-select');
+select.innerHTML = '';
+const matchingTemplates = Object.keys(allTemplates).filter(name => allTemplates[name].targetWorkflow === workflowName);
+if (matchingTemplates.length === 0) {
+select.add(new Option('WARNING: No templates available for ' + workflowName, ""));
+select.disabled = true;
+document.getElementById('wiz-preview-subject').innerHTML = "";
+document.getElementById('wiz-preview-body').innerHTML = '<span style="color: var(--error-color);">Configuration Error: Please open Template Builder and create a template for ' + workflowName + '.</span>';
+} else {
+select.disabled = false;
+matchingTemplates.forEach(name => select.add(new Option(name, name)));
+updateWizardPreview();
+}
+};
+
+const updateWizardPreview = () => {
+const templateName = document.getElementById('wizard-template-select').value;
+if (!templateName || !allTemplates[templateName]) return;
+
+const templateData = allTemplates[templateName];
+const modal = document.getElementById('wizard-modal');
+const agentNames = JSON.parse(modal.dataset.agentNames);
+const firstAgentName = agentNames[0];
+const firstAgentId = JSON.parse(modal.dataset.agentIds)[0];
+const formattedDate = modal.dataset.dateVal.replace(/-/g, '/');
+const originalFileUrl = (templateData.driveFileId && templateData.driveFileId.trim() !== '')
+? 'https://drive.google.com/file/d/' + templateData.driveFileId.trim() + '/view'
+: 'javascript:void(0)';
+const prettyLink = '<a href="' + originalFileUrl + '" target="_blank" style="color: var(--primary-glow); font-weight: bold; text-decoration: underline;">Click Here</a>';
+let cleanedBody = templateData.emailBody.replace(/<span class="visual-token"[^>]*>{{(.*?)}}<\/span>/g, "{{$1}}");
+cleanedBody = cleanedBody.replace(/href=["']{{FILE_URL}}["']/g, 'href="' + originalFileUrl + '"');
+const replaceVars = function(text) {
+return text.replace(/{{AGENT_NAME}}/g, firstAgentName)
+.replace(/{{AGENT_ID}}/g, firstAgentId)
+.replace(/{{DATE}}/g, formattedDate)
+.replace(/{{FILE_URL}}/g, prettyLink);
+};
+
+const previewDisclaimer = agentNames.length > 1
+? "<div style='font-size:12px; color:var(--primary-accent); margin-bottom:16px; font-style:italic; padding-bottom:12px; border-bottom:1px solid rgba(212, 175, 55, 0.2);'>* Live Preview showing simulated data for the first agent in queue (" + firstAgentName + ").</div>"
+: "";
+document.getElementById('wiz-preview-subject').innerHTML = replaceVars(templateData.emailSubject);
+let finalPreviewHTML = previewDisclaimer + replaceVars(cleanedBody);
+finalPreviewHTML = sanitizeHtmlStyles(finalPreviewHTML);
+const previewBody = document.getElementById('wiz-preview-body');
+previewBody.innerHTML = finalPreviewHTML;
+previewBody.querySelectorAll('a').forEach(a => {
+a.setAttribute('target', '_blank');
+a.setAttribute('rel', 'noopener noreferrer');
+});
+};
+
+const executePrepareEmail = () => {
+const modal = document.getElementById('wizard-modal');
+const templateName = document.getElementById('wizard-template-select').value;
+let templateData = allTemplates[templateName];
+
+if (!templateData) return showBanner('Template configuration missing.', 'error');
+let sanitizedData = JSON.parse(JSON.stringify(templateData));
+sanitizedData.emailBody = sanitizedData.emailBody.replace(/<span class="visual-token"[^>]*>{{(.*?)}}<\/span>/g, "{{$1}}");
+const wf = modal.dataset.workflow;
+const agentIds = JSON.parse(modal.dataset.agentIds);
+const agentNames = JSON.parse(modal.dataset.agentNames);
+const dateVal = modal.dataset.dateVal;
+const totalTasks = agentIds.length;
+
+const threadSelections = {};
+agentIds.forEach(id => {
+const selectElement = document.getElementById('thread-select-' + id);
+threadSelections[id] = selectElement ? selectElement.value : 'NEW';
+});
+
+closeWizard();
+showLoading('Executing Automation...', true);
+const bar = document.getElementById('progress-bar');
+const textPerc = document.getElementById('progress-perc');
+const textStatus = document.getElementById('progress-status');
+const textCount = document.getElementById('progress-text');
+bar.classList.add('progress-active');
+let completedTasks = 0;
+let fakePerc = 0;
+textStatus.innerText = 'Drafting for ' + agentNames[0] + '...';
+textCount.innerText = '0 of ' + totalTasks + ' Completed';
+let progressInterval = setInterval(() => {
+if (fakePerc < 95) {
+let increment = (Math.random() * 2 + 1) * ((100 - fakePerc) / 100);
+fakePerc += increment;
+bar.style.width = fakePerc + '%';
+textPerc.innerText = Math.round(fakePerc) + '%';
+}
+}, 150);
+const draftPromises = agentIds.map((agentId, index) => {
+return new Promise((resolve, reject) => {
+setTimeout(() => {
+const explicitThreadId = threadSelections[agentId];
+google.script.run
+.withSuccessHandler(res => {
+completedTasks++;
+textCount.innerText = completedTasks + ' of ' + totalTasks + ' Completed';
+if (index + 1 < totalTasks) {
+textStatus.innerText = 'Drafting for ' + agentNames[index + 1] + '...';
+}
+resolve(res);
+})
+.withFailureHandler(err => reject(err))
+.generateSingleDraft(wf, agentId, dateVal, sanitizedData, explicitThreadId);
+}, index * 100);
+});
+});
+
+Promise.all(draftPromises)
+.then(results => {
+clearInterval(progressInterval);
+textStatus.innerText = 'Automation Complete!';
+textStatus.style.color = 'var(--success-color)';
+textPerc.innerText = '100%';
+textPerc.style.color = 'var(--success-color)';
+document.getElementById('loader-message').style.color = 'var(--success-color)';
+bar.style.transition = 'width 0.3s ease-out';
+bar.style.width = '100%';
+bar.classList.remove('progress-active');
+bar.classList.add('progress-success');
+
+setTimeout(() => {
+hideLoading();
+showBanner('Success! ' + results.length + ' simulated draft(s) generated. Demo audit log updated; no email was sent.', 'success', 6000);
+if(results.length > 0 && results[0].url) {
+setTimeout(() => window.open(results[0].url, '_blank'), 500);
+}
+deselectAllAgents(new Event('dummy'));
+}, 1000);
+})
+.catch(err => {
+clearInterval(progressInterval);
+bar.classList.remove('progress-active');
+handleFailure(err);
+});
+};
+
+const toggleAdvanced = () => {
+document.getElementById('advanced-section').classList.toggle('open');
+document.getElementById('adv-toggle-btn').classList.toggle('open');
+};
+const toggleGuide = () => { document.getElementById('guide-panel').classList.toggle('open'); };
+const closeWizard = () => { document.getElementById('wizard-modal').classList.remove('active'); };
+const openSettings = () => { document.getElementById('settings-modal').classList.add('active'); };
+const closeSettings = () => { document.getElementById('settings-modal').classList.remove('active'); };
+const formatText = (command) => {
+document.execCommand(command, false, null);
+document.getElementById('setting-body-editor').focus();
+updateEditorFocus();
+};
+const insertHyperlink = () => {
+const url = prompt("Insert standard URL or {{FILE_URL}} tag:", "{{FILE_URL}}");
+if (url) {
+document.execCommand('createLink', false, url);
+updateEditorFocus();
+updateLivePreview();
+}
+};
+</script>
+</body>
+</html>

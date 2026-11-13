@@ -1,4 +1,19 @@
 # Viriathus Email Automation
+## About the project
+
+Viriathus Email Automation helps teams prepare personalized email drafts for groups of agents. Users choose a workflow, select recipients and a date, pick an email template, and review the result before starting a batch. The Apps Script implementation can also copy a Drive template, link a draft to a selected email thread, and record an audit entry.
+
+### Key capabilities
+
+- Organize agents into workflows and manage reusable email templates.
+- Personalize subjects and message bodies with agent, date, and file-link tokens.
+- Preview the email and choose a new or existing thread for each agent.
+- Review an audit history of automation actions.
+
+**[Open the live demo](https://vlabarile3-sys.github.io/Viriathus-Email-Automation/)**
+
+The public demo uses fictional data and simulates these actions in the browser. It does not create Gmail drafts, send emails, or access Google Sheets or Drive. Demo changes are stored in the browser; the separate Apps Script source requires configuration and authorization for real integrations.
+
 
 Public GitHub Pages demo and sanitized Google Apps Script source for Viriathus Email Automation.
 
